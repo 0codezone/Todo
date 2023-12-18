@@ -1,11 +1,15 @@
 import Express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
+import dotenv from "dotenv";
 import todoRoutes from "./routes/todoRoutes.js";
 import connectDB from "./config/database.js";
+import errorHandler from "./middleware/errorHandler.js";
+
+dotenv.config();
 
 const app = new Express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5001;
 
 //mongoDB connection
 connectDB();
@@ -13,8 +17,9 @@ connectDB();
 // middleware
 app.use(bodyParser.json());
 app.use(cors());
+app.use(errorHandler);
 
-// routes
+// routes middeleware
 app.use("/api/todos", todoRoutes);
 
 //sample demo route

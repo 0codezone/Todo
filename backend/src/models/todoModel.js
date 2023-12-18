@@ -4,19 +4,15 @@ const todoSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      required: true,
+      required: [true, "Please enter title"],
     },
     description: {
       type: String,
-      required: true,
+      required: [true, "Please enter description"],
     },
     completed: {
       type: Boolean,
       default: false,
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now,
     },
   },
   { timestamps: true }
