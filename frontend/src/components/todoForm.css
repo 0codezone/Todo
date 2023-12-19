@@ -1,0 +1,64 @@
+/* Default styles for form */
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+label {
+    margin-right: 8px;
+    color: #333;
+    /* Optional: Adjust label color */
+    font-weight: bold;
+    margin-left: 10px;
+
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 16px;
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    /* Optional: Add border for consistency with TodoItem */
+    outline-style: none;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 600px) {
+    form {
+        flex-direction: column;
+        /* Stack items vertically for smaller screens */
+        align-items: stretch;
+        /* Stretch items to fill the width */
+    }
+
+    label {
+        margin-bottom: 8px;
+        /* Add bottom margin for better spacing */
+    }
+
+    input {
+        margin-bottom: 8px;
+
+        /* Add bottom margin for better spacing */
+    }
+
+    button {
+        margin-top: 8px;
+        /* Add top margin for better spacing */
+    }
+}
