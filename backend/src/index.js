@@ -3,6 +3,8 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import dotenv from "dotenv";
 import todoRoutes from "./routes/todoRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
 import connectDB from "./config/database.js";
 import errorHandler from "./middleware/errorHandler.js";
 
@@ -20,6 +22,8 @@ app.use(cors());
 app.use(errorHandler);
 
 // routes middeleware
+app.use("/api/auth", authRoutes);
+app.use("/api/user", userRoutes);
 app.use("/api/todos", todoRoutes);
 
 //sample demo route

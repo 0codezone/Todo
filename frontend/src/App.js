@@ -4,13 +4,12 @@ import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://todo-zcdv.onrender.com/api";
 
 const App = () => {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    // Fetch initial data from the backend when the component mounts
     fetchTodos();
   }, []);
 
